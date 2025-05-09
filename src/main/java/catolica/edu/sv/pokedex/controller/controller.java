@@ -20,6 +20,13 @@ public class controller {
         return pokemonservice.findAll();
     }
 
+
+    @Transactional(readOnly = true)
+    @GetMapping("/pokemons2")
+    public List<entitiespokemon> getAllPokemons2() {
+        return pokemonservice.findAll();
+    }
+
     @Transactional
     @PostMapping("/pokemon")
     public entitiespokemon savePokemon(@RequestBody entitiespokemon pokemon) {
